@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="730dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="123dp"
+            android:layout_height="122dp"
+            android:layout_marginTop="50dp"
+            android:contentDescription="@string/applogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/capture"
+            tools:ignore="ImageContrastCheck" />
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="@android:color/transparent"
+            android:text="@string/logout"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="8pt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="logOut"
+            />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:onClick="selectArticle"
+                >
+
+                <ImageView
+                    android:id="@+id/headlineImage"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/headlineimage3"
+                    tools:ignore="ImageContrastCheck"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <LinearLayout
+                    android:layout_width="260dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/headlineheader"
+                        android:layout_width="148dp"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:text="@string/lorem_ipsum"
+                        android:textSize="10pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/headlineDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_12_02_2018"
+                        android:textSize="8pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/headlineSnip3"
+                        android:layout_width="match_parent"
+                        android:layout_height="117dp"
+                        android:text="@string/headlines3"
+                        android:textColor="#004D40"
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:onClick="selectArticle">
+
+                <ImageView
+                    android:id="@+id/headlineImage2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/headlinesimage2"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/headlineHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:text="@string/header2"
+                        android:textSize="10pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/headlineDate2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date2"
+                        android:textSize="9pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/headlineSnip2"
+                        android:layout_width="match_parent"
+                        android:layout_height="113dp"
+                        android:text="@string/Hedlines2"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="199dp"
+                android:onClick="selectArticle"
+                >
+
+                <ImageView
+                    android:id="@+id/headlineImage3"
+                    android:layout_width="147dp"
+                    android:layout_height="149dp"
+                    android:contentDescription="@string/headlinesimage3"
+                    tools:ignore="ImageContrastCheck"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/headlineHeader3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="-20px"
+                        android:text="@string/header3"
+                        android:textSize="10pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/headlineDate3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date3"
+                        android:textSize="8pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/headlineSnip"
+                        android:layout_width="250dp"
+                        android:layout_height="127dp"
+                        android:text="@string/Newsheadline1"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+            </TableRow>
+
+        </TableLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
