@@ -6,11 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import java.net.PasswordAuthentication;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
     private boolean rememberMe = false;
     private String[] NameDatabase = {"John Doe", "Jane Doe", "JohnD", "JohnChamp"};
+    private String[] passwords = {"abcdef", "Jane007", "JohnDoe001", "Johnny2022"};
 
 
     @Override
@@ -33,13 +34,25 @@ public class MainActivity extends AppCompatActivity {
 
         EditText passwordIn = findViewById(R.id.password);
         String password = passwordIn.getText().toString();
-
             if (username.isEmpty()) {
                 usernameIn.setError("Invalid username");
             } else if (password.isEmpty()) {
                 passwordIn.setError("Invalid password");
             } else {
-                setContentView(R.layout.newsfeed);
+                for (int i = 0; i > NameDatabase.length; i++){
+                    if (username.equals(NameDatabase[i])){
+                        if (password.equals(passwords[i])){
+                            setContentView(R.layout.newsfeed);
+                        }
+                        else{
+                            passwordIn.setError("Invalid Password");
+                        }
+                    }
+                    else{
+                        usernameIn.setError("Invalid Username");
+                    }
+                }
+
             }
 
 
