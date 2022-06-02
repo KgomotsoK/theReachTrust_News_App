@@ -10,36 +10,39 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.newsapp.Database.AppDatabase;
+import com.example.newsapp.Database.User;
+
 public class MainActivity extends AppCompatActivity {
 
     private boolean rememberMe = false;
-    private String[] NameDatabase = {"John Doe", "Jane Doe", "JohnD", "JohnChamp"};
-    private String[] passwords = {"abcdef", "Jane007", "JohnDoe001", "Johnny2022"};
     ViewPager pageSlider;
     LinearLayout linerDots;
     TextView[] dots;
     ViewPagerWrapper viewpagerWrapper;
     ViewPager viewerPager;
     LinearLayout linearLayout;
-
+    AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         viewerPager = (ViewPager) findViewById(R.id.slideViewPager);
         linearLayout = (LinearLayout) findViewById(R.id.indicator_layout);
 
         viewpagerWrapper = new ViewPagerWrapper(this);
-
         viewerPager.setAdapter(viewpagerWrapper);
-
         setUpIndicator(0);
         viewerPager.addOnPageChangeListener(viewListener);
 
     }
+    /*
+    * When user press skip button
+    * The display changes to the log in display
+    * the onclick method is defined in the main_activity xml layout
+     */
     public void onSkipButtonClick(View view){
         if (rememberMe != true) {
             setContentView(R.layout.login);}
@@ -47,35 +50,31 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.newsfeed);
         }
     }
+    /*
+    * The user enters the log in details
+    * the method checks if the fields are empty a the generates error messages is fields are empty
+    * Else the details are added to the database
+     */
     public void onLogInClick(View view){
         EditText usernameIn = findViewById(R.id.usernameText);
         String username = usernameIn.getText().toString();
-
         EditText passwordIn = findViewById(R.id.password);
         String password = passwordIn.getText().toString();
+
         if (username.isEmpty()) {
             usernameIn.setError("Invalid username");
         } else if (password.isEmpty()) {
             passwordIn.setError("Invalid password");
         } else {
-            for (int i = 0; i > NameDatabase.length; i++){
-                if (username.equals(NameDatabase[i])){
-                    if (password.equals(passwords[i])){
-                        setContentView(R.layout.newsfeed);
-                    }
-                    else{
-                        passwordIn.setError("Invalid Password");
-                    }
-                }
-                else{
-                    usernameIn.setError("Invalid Username");
-                }
-            }
-
+            db = AppDatabase.getDbInstance(this.getApplicationContext());
+            User user = new User();
+            user.username = username;
+            user.password = password;
+            db.userDao().insertUser(user);
+            setContentView(R.layout.newsfeed);
         }
-
-
     }
+
     public void selectArticle(View v){
         setContentView(R.layout.articledetails);
     }
