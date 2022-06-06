@@ -28,7 +28,7 @@
     <string name="password">Password</string>
     <string name="remember_me">Remember me</string>
     <string name="login">Login</string>
-    <string name="logout">logout</string>
+    <string name="logout">Logout</string>
     <string name="lorem_ipsum">Lorem Ipsum</string>
     <string name="_12_02_2018">12/02/2018</string>
     <string name="Newsheadline1">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
@@ -51,4 +51,6 @@
     <string name="navimg">navImg</string>
     <string name="applogo">appLogo</string>
     <string name="skip">Skip</string>
+    <string name="textview">TextView</string>
+    <string name="article_image">article_Image</string>
 </resources>

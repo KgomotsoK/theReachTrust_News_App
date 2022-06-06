@@ -16,11 +16,13 @@
             android:layout_width="123dp"
             android:layout_height="122dp"
             android:layout_marginTop="50dp"
+            android:contentDescription="@string/applogo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/capture" />
+            app:srcCompat="@mipmap/capture"
+            tools:ignore="ImageContrastCheck" />
 
         <EditText
             android:id="@+id/usernameText"
@@ -47,14 +49,15 @@
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
+            android:textColorHint="#757575"
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/usernameText" />
 
-        <Switch
-            android:id="@+id/remembermeButton"
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/rememberMeButton"
             android:layout_width="154dp"
             android:layout_height="58dp"
             android:layout_marginTop="50dp"
@@ -65,11 +68,10 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/password"
-            tools:text="Remember me"
-            android:onClick="rememberMeButton"/>
+            tools:text="Remember me"/>
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/logIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
@@ -79,8 +81,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/remembermeButton"
-            android:onClick="onLogInClick"
+            app:layout_constraintTop_toBottomOf="@+id/rememberMeButton"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
