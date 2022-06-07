@@ -48,15 +48,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:onClick="selectArticle"
-                >
+                tools:ignore="DuplicateSpeakableTextCheck">
 
                 <ImageView
-                    android:id="@+id/headlineImage"
-                    android:layout_width="150dp"
+                    android:id="@+id/imageView3"
+                    android:layout_width="161dp"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/headLineImage3"
-                    tools:ignore="ImageContrastCheck"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:contentDescription="@string/appLogo"
+                    app:srcCompat="@mipmap/thereachlogo"
+                    tools:ignore="ImageContrastCheck" />
 
                 <LinearLayout
                     android:layout_width="260dp"
@@ -98,11 +98,12 @@
                 android:onClick="selectArticle">
 
                 <ImageView
-                    android:id="@+id/headlineImage2"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/imageView4"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/headLinesImage2"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:contentDescription="@string/appLogo"
+                    app:srcCompat="@mipmap/thereachlogo"
+                    tools:ignore="ImageContrastCheck" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -143,12 +144,12 @@
                 >
 
                 <ImageView
-                    android:id="@+id/headlineImage3"
-                    android:layout_width="147dp"
-                    android:layout_height="149dp"
-                    android:contentDescription="@string/headLinesImage3"
-                    tools:ignore="ImageContrastCheck"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:id="@+id/imageView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/appLogo"
+                    app:srcCompat="@mipmap/thereachlogo"
+                    tools:ignore="ImageContrastCheck" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

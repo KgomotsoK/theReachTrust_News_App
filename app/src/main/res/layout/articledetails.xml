@@ -25,12 +25,11 @@
             android:layout_width="81dp"
             android:layout_height="61dp"
             android:contentDescription="@string/navImg"
+            android:onClick="backPage"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="?attr/homeAsUpIndicator"
-            android:onClick="backPage"
-            />
+            app:srcCompat="?attr/homeAsUpIndicator" />
 
         <TextView
             android:id="@+id/articleTitle"
@@ -47,14 +46,14 @@
 
         <ImageView
             android:id="@+id/articleImage"
-            android:layout_width="407dp"
-            android:layout_height="150dp"
-            android:contentDescription="@string/headLineImg"
+            android:layout_width="0dp"
+            android:layout_height="122dp"
+            android:contentDescription="@string/article_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar3"
-            tools:ignore="ImageContrastCheck"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:srcCompat="@mipmap/thereachlogo"
+            tools:ignore="ImageContrastCheck" />
 
         <TextView
             android:id="@+id/articleHeadline"
