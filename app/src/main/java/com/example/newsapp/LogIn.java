@@ -43,8 +43,20 @@ public class LogIn extends AppCompatActivity {
         login = findViewById(R.id.logIn);
 
         login.setOnClickListener((View view) -> {
+            if (usernameIn.getText().toString().equals("") && passwordIn.getText().toString().equals("")){
+                usernameIn.setError("Please Enter Username");
+                passwordIn.setError("Enter Password!");
+            }
+            else if (passwordIn.getText().toString().equals("")){
+                passwordIn.setError("Enter Password!");
+            }
+            else if (usernameIn.getText().toString().equals("")){
+                usernameIn.setError("Please Enter Username");
+            }
+            else {
                 Intent intent = new Intent(LogIn.this, Homepage.class);
                 startActivity(intent);
+            }
         });
         /*
          * Stores user creditials( username and password) into a database
