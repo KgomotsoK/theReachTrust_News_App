@@ -45,6 +45,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
             <TableRow
+                android:id="@+id/rowOne"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:onClick="selectArticle"
@@ -93,6 +94,7 @@
             </TableRow>
 
             <TableRow
+                android:id="@+id/rowTwo"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:onClick="selectArticle">
@@ -138,10 +140,10 @@
             </TableRow>
 
             <TableRow
+                android:id="@+id/rowThree"
                 android:layout_width="match_parent"
                 android:layout_height="199dp"
-                android:onClick="selectArticle"
-                >
+                android:onClick="selectArticle">
 
                 <ImageView
                     android:id="@+id/imageView5"

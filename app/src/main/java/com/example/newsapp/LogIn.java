@@ -29,6 +29,8 @@ public class LogIn extends AppCompatActivity {
     EditText usernameIn, passwordIn;
     SwitchCompat switchButton;
     Button login;
+    static SharedPreferences preferences;
+    static SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,13 +58,13 @@ public class LogIn extends AppCompatActivity {
          * If it is switched on the app switches to the homepage of the app
          * If not, It tells the user to sign in
          */
-        SharedPreferences preferences = getSharedPreferences("switched_button", MODE_PRIVATE);
+        preferences = getSharedPreferences("switch_button", MODE_PRIVATE);
         String switch_button = preferences.getString("remember", "");
         if (switch_button.equals("true")){
             Intent intent = new Intent(LogIn.this, Homepage.class);
             startActivity(intent);
         }
-        else{
+        else if(!switch_button.equals("false")){
             Toast.makeText(this, "Please Enter Details.", Toast.LENGTH_SHORT).show();
         }
         /*
@@ -72,17 +74,19 @@ public class LogIn extends AppCompatActivity {
          */
         switchButton.setOnCheckedChangeListener((CompoundButton compoundButton, boolean b) -> {
                 if (compoundButton.isChecked()) {
-                    SharedPreferences pref = getSharedPreferences("switch_button", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = pref.edit();
+                    preferences = getSharedPreferences("switch_button", MODE_PRIVATE);
+                    editor = preferences.edit();
                     editor.putString("remember", "true");
                     editor.apply();
                 }
-                else{
-                    SharedPreferences pref = getSharedPreferences("switch_button", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = pref.edit();
+                else if (!compoundButton.isChecked()){
+                    preferences = getSharedPreferences("switch_button", MODE_PRIVATE);
+                    editor = preferences.edit();
                     editor.putString("remember", "false");
                     editor.apply();
                 }
         });
     }
+
+
 }

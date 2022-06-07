@@ -1,5 +1,6 @@
 package com.example.newsapp;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -24,11 +25,22 @@ public class Homepage extends AppCompatActivity {
         logOut = findViewById(R.id.logoutButton);
 
         logOut.setOnClickListener((View view) -> {
-                SharedPreferences preferences = getSharedPreferences("switch_button", MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("remember", "false");
-                editor.apply();
-                finish();
+            LogIn.preferences = getSharedPreferences("switch_button", MODE_PRIVATE);
+            LogIn.editor = LogIn.preferences.edit();
+            LogIn.editor.putString("remember", "false");
+            LogIn.editor.apply();
+            finish();
+            Intent intent = new Intent(Homepage.this, LogIn.class);
+            startActivity(intent);
         });
+    }
+
+    /*
+     * When a specific article is selected
+     * this method is responsible for changing the view to a selected article.
+     */
+    public void selectArticle(View v) {
+        Intent intent = new Intent(Homepage.this, ReadArticle.class);
+        startActivity(intent);
     }
 }

@@ -41,20 +41,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, LogIn.class);
         startActivity(intent);
     }
-    /*
-     * When a specific article is selected
-     * this method is responsible for changing the view to a selected article.
-     */
-    public void selectArticle(View v) {
-        setContentView(v);
-    }
-    /*
-     * This view in the article screen is for the back page button,
-     * Takes the user to previous screen.
-     */
-    public void backPage(View v) {
-        setContentView(v);
-    }
+
     /*
      * The following methods are responsible for the walkthrough screen
      * When the app is first opened

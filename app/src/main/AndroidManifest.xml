@@ -17,8 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Homepage"></activity>
-        <activity android:name=".LogIn"></activity>
+        <activity android:name=".Homepage" />
+        <activity android:name=".LogIn" />
+        <activity android:name=".ReadArticle" />
     </application>
 
 </manifest>

@@ -25,7 +25,6 @@
             android:layout_width="81dp"
             android:layout_height="61dp"
             android:contentDescription="@string/navImg"
-            android:onClick="backPage"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
