@@ -4,11 +4,18 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+  * Responsible for the landing page of the app after the user log in
+  *
+  * @version 0.1
+  *
+  * @Kgomotso
+  */
 public class Homepage extends AppCompatActivity {
     Button logOut;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

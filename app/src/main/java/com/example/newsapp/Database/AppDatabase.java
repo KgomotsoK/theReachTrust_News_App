@@ -1,4 +1,8 @@
 package com.example.newsapp.Database;
+/**
+ * Simple implementation of Room Database
+ * Code from developers.android.com
+ */
 
 import android.content.Context;
 
@@ -12,7 +16,12 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract UserDao userDao();
-
+    /*
+     * Updates the database when there has been new input
+     * The initial database used "userId" as key but the app failed to run
+     * so instead of delating the already created table
+     * The user key is now updated to "uid"
+     */
     static final Migration MIGRATION_1_2= new Migration(1, 2) {
         @Override
         public void migrate(SupportSQLiteDatabase database) {

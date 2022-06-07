@@ -1,4 +1,11 @@
 package com.example.newsapp;
+/**
+  * The class is responsible for the "walkthrough" page simulations
+  * Utilises the ViewPager for this functionality
+  *
+  * @version 0.1
+  * @Kgomotso
+  */
 
 import android.content.Context;
 import android.view.LayoutInflater;

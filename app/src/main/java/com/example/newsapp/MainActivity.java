@@ -1,5 +1,10 @@
 package com.example.newsapp;
-
+/**
+ * The MainActivity class show the "walkthrough" screen
+ *
+ * @version 1.0
+ * @Kgomotso
+ */
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -14,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPagerWrapper viewpagerWrapper;
     ViewPager viewerPager;
     LinearLayout linearLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,13 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
         viewerPager = findViewById(R.id.slideViewPager);
         linearLayout = findViewById(R.id.indicator_layout);
-
         viewpagerWrapper = new ViewPagerWrapper(this);
         viewerPager.setAdapter(viewpagerWrapper);
         setUpIndicator(0);
         viewerPager.addOnPageChangeListener(viewListener);
     }
-
     /*
      * When user press skip button
      * The display changes to the log in display

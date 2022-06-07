@@ -1,4 +1,15 @@
 package com.example.newsapp;
+/**
+ * This class is responsible for "remember me" functionality when user switches the switch button
+ * It is also responsible for logging in functionality
+ * Does this by using SharedPreferences API instead of the database,
+ * The user credetials are saved in a Room DataBase afetr they are entered by the user -
+ * This functionality is simple and only uses one SQL query only which is import.
+ *
+ * @version 0.1
+ *
+ * @Kgomotso
+ */
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,7 +19,6 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
@@ -34,13 +44,13 @@ public class LogIn extends AppCompatActivity {
                 startActivity(intent);
         });
         /*
-        */
+         * Stores user creditials( username and password) into a database
+         */
         AppDatabase db  = AppDatabase.getDbInstance(this.getApplicationContext());
         User user = new User();
         user.username = usernameIn.getText().toString();
         user.password = passwordIn.getText().toString();
         db.userDao().insertUser(user);
-
         /*
          * Checks if "remember me" button has been switched,
          * If it is switched on the app switches to the homepage of the app
@@ -75,5 +85,4 @@ public class LogIn extends AppCompatActivity {
                 }
         });
     }
-
 }
