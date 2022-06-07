@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainScreenActivity extends AppCompatActivity {
+public class Homepage extends AppCompatActivity {
     Button logOut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,15 +16,12 @@ public class MainScreenActivity extends AppCompatActivity {
 
         logOut = findViewById(R.id.logoutButton);
 
-        logOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        logOut.setOnClickListener((View view) -> {
                 SharedPreferences preferences = getSharedPreferences("switch_button", MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("remember", "false");
                 editor.apply();
                 finish();
-            }
         });
     }
 }

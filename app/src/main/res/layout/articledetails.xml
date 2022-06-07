@@ -21,10 +21,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/backpageImage"
+            android:id="@+id/backPageImage"
             android:layout_width="81dp"
             android:layout_height="61dp"
-            android:contentDescription="@string/navimg"
+            android:contentDescription="@string/navImg"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -42,14 +42,14 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/backpageImage"
+            app:layout_constraintStart_toEndOf="@+id/backPageImage"
             app:layout_constraintTop_toTopOf="@+id/toolbar3" />
 
         <ImageView
             android:id="@+id/articleImage"
             android:layout_width="407dp"
             android:layout_height="150dp"
-            android:contentDescription="@string/headlineimg"
+            android:contentDescription="@string/headLineImg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar3"

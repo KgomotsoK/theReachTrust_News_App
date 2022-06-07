@@ -14,7 +14,7 @@
             android:layout_width="123dp"
             android:layout_height="122dp"
             android:layout_marginTop="50dp"
-            android:contentDescription="@string/applogo"
+            android:contentDescription="@string/appLogo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -34,7 +34,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="parent"
-            android:onClick="logOut"
             />
 
         <TableLayout
@@ -55,7 +54,7 @@
                     android:id="@+id/headlineImage"
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/headlineimage3"
+                    android:contentDescription="@string/headLineImage3"
                     tools:ignore="ImageContrastCheck"
                     tools:srcCompat="@tools:sample/avatars" />
 
@@ -65,7 +64,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/headlineheader"
+                        android:id="@+id/headLineHeader"
                         android:layout_width="148dp"
                         android:layout_height="wrap_content"
                         android:paddingTop="4dp"
@@ -102,7 +101,7 @@
                     android:id="@+id/headlineImage2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/headlinesimage2"
+                    android:contentDescription="@string/headLinesImage2"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <LinearLayout
@@ -131,7 +130,7 @@
                         android:id="@+id/headlineSnip2"
                         android:layout_width="match_parent"
                         android:layout_height="113dp"
-                        android:text="@string/Hedlines2"
+                        android:text="@string/HeadLines2"
                         android:textSize="17sp" />
                 </LinearLayout>
 
@@ -147,7 +146,7 @@
                     android:id="@+id/headlineImage3"
                     android:layout_width="147dp"
                     android:layout_height="149dp"
-                    android:contentDescription="@string/headlinesimage3"
+                    android:contentDescription="@string/headLinesImage3"
                     tools:ignore="ImageContrastCheck"
                     tools:srcCompat="@tools:sample/avatars" />
 
@@ -177,7 +176,7 @@
                         android:id="@+id/headlineSnip"
                         android:layout_width="250dp"
                         android:layout_height="127dp"
-                        android:text="@string/Newsheadline1"
+                        android:text="@string/NewsHeadLine1"
                         android:textSize="17sp" />
                 </LinearLayout>
 

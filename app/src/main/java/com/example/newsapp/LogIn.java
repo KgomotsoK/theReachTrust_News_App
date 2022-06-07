@@ -12,10 +12,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import com.example.newsapp.Database.AppDatabase;
+import com.example.newsapp.Database.User;
+
 public class LogIn extends AppCompatActivity {
-    private EditText usernameIn, passwordIn;
-    private SwitchCompat switchButton;
-    private Button login;
+    EditText usernameIn, passwordIn;
+    SwitchCompat switchButton;
+    Button login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,43 +29,51 @@ public class LogIn extends AppCompatActivity {
         switchButton = findViewById(R.id.rememberMeButton);
         login = findViewById(R.id.logIn);
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LogIn.this, MainScreenActivity.class);
+        login.setOnClickListener((View view) -> {
+                Intent intent = new Intent(LogIn.this, Homepage.class);
                 startActivity(intent);
-            }
         });
+        /*
+        */
+        AppDatabase db  = AppDatabase.getDbInstance(this.getApplicationContext());
+        User user = new User();
+        user.username = usernameIn.getText().toString();
+        user.password = passwordIn.getText().toString();
+        db.userDao().insertUser(user);
 
+        /*
+         * Checks if "remember me" button has been switched,
+         * If it is switched on the app switches to the homepage of the app
+         * If not, It tells the user to sign in
+         */
         SharedPreferences preferences = getSharedPreferences("switched_button", MODE_PRIVATE);
         String switch_button = preferences.getString("remember", "");
         if (switch_button.equals("true")){
-            Intent intent = new Intent(LogIn.this, MainScreenActivity.class);
+            Intent intent = new Intent(LogIn.this, Homepage.class);
             startActivity(intent);
         }
         else{
-            Toast.makeText(this, "Please Sign In.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please Enter Details.", Toast.LENGTH_SHORT).show();
         }
-        switchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        /*
+         * This button uses the concept of shared preferences to save the user input
+         * When the "Remember me" button is switched on,
+         * In the last log in session
+         */
+        switchButton.setOnCheckedChangeListener((CompoundButton compoundButton, boolean b) -> {
                 if (compoundButton.isChecked()) {
-                    SharedPreferences preferences = getSharedPreferences("switch_button", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = preferences.edit();
+                    SharedPreferences pref = getSharedPreferences("switch_button", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = pref.edit();
                     editor.putString("remember", "true");
                     editor.apply();
-                    Toast.makeText(LogIn.this, "switched", Toast.LENGTH_LONG).show();
                 }
                 else{
-                    SharedPreferences preferences = getSharedPreferences("switch_button", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = preferences.edit();
+                    SharedPreferences pref = getSharedPreferences("switch_button", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = pref.edit();
                     editor.putString("remember", "false");
                     editor.apply();
-                    Toast.makeText(LogIn.this, "Unswitched", Toast.LENGTH_LONG).show();
                 }
-            }
         });
     }
-
 
 }

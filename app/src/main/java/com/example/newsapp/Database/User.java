@@ -5,8 +5,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.PrimaryKey;
 @Entity
 public class User {
-    @PrimaryKey
-    public int userId;
+    @PrimaryKey(autoGenerate = true)
+    public int uid;
 
     @ColumnInfo(name = "username")
     public String username;
