@@ -3,8 +3,9 @@ package com.example.newsapp;
  * This class is responsible for "remember me" functionality when user switches the switch button
  * It is also responsible for logging in functionality
  * Does this by using SharedPreferences API instead of the database,
+ * The SharedPreferences variables are shared between the Homepage and LogIn classes
  * The user credetials are saved in a Room DataBase afetr they are entered by the user -
- * This functionality is simple and only uses one SQL query only which is import.
+ * This functionality is simple and only uses one SQL query on which is import.
  *
  * @version 0.1
  *
