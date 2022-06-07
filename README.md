@@ -3,9 +3,10 @@ This is a technical test for android programming.
 
 The code is not packaged yet, I did not know if I had to package it.
 
-At the moment Android studio is needed to run the app
+At the moment Android studio is needed to run the app.
+The App will run on android marshmellow devices and upwards 
 The app is written in Java,
-It uses the SharedPreferences API, Room Database, ViewPager layout for walkthrough page
+It uses the SharedPreferences API, Room Database, ViewPager layout for walkthrough page.
 
 User will have to enter username and password at initial start,
   - These do not have a specific structure, entering any sequence of characters(Stings) of an length will be accepted
